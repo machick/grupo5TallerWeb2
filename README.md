@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
+## Machi notas
+Clonar el repo y luego correr `npm install` una vez instalado las dependencias tendrian que correr el proyecto con `ng serve` (aconsejo `ng serve -o` asi tambien se los abre automaticamente con el navegador predeterminado) 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
