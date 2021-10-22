@@ -4,19 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { EjemPageComponent } from './pages/ejemPage/ejemPage.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EjemPageComponent
+    NavbarComponent,
+    SigninComponent,
+    RegisterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
