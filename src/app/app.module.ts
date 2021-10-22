@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EjemPageComponent } from './pages/ejemPage/ejemPage.component';
+import { ProductosHomeComponent } from './pages/productos-home/productos-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EjemPageComponent
+    EjemPageComponent,
+    ProductosHomeComponent
   ],
   imports: [
     BrowserModule,
