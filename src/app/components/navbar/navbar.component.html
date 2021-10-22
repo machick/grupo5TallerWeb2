@@ -1,0 +1,42 @@
+<app-register></app-register>
+<nav class="navbar navbar-light bg-light p-0">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img
+        id="isotipo"
+        src="../assets/img/imagotipo.png"
+        alt="BirrApp Isotipo"
+      />
+    </a>
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions"
+    >
+      <i class="bi bi-box-arrow-in-right"></i>
+      Ingresar
+    </button>
+  </div>
+</nav>
+
+<div
+  class="offcanvas offcanvas-end"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header justify-content-end">
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-signin></app-signin>
+  </div>
+</div>
