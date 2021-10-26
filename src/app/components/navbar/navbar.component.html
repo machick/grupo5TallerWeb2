@@ -1,42 +1,37 @@
-<app-register-modal></app-register-modal>
 <nav class="navbar navbar-light bg-light p-0">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img
+        class="float-start"
         id="isotipo"
         src="../assets/img/imagotipo.png"
         alt="BirrApp Isotipo"
       />
     </a>
-    <button
-      class="btn btn-primary"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasWithBothOptions"
-      aria-controls="offcanvasWithBothOptions"
-    >
-      <i class="bi bi-box-arrow-in-right"></i>
-      Ingresar
-    </button>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions-1"
+        aria-controls="offcanvasWithBothOptions"
+      >
+        <i class="bi bi-cart"></i>
+        Carrito
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasWithBothOptions-2"
+        aria-controls="offcanvasWithBothOptions"
+      >
+        <i class="bi bi-person-circle"></i>
+        Perfil
+      </button>
+    </div>
   </div>
 </nav>
 
-<div
-  class="offcanvas offcanvas-end"
-  data-bs-scroll="true"
-  tabindex="-1"
-  id="offcanvasWithBothOptions"
-  aria-labelledby="offcanvasWithBothOptionsLabel"
->
-  <div class="offcanvas-header justify-content-end">
-    <button
-      type="button"
-      class="btn-close text-reset"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
-  </div>
-  <div class="offcanvas-body">
-    <app-signin-offcanvas></app-signin-offcanvas>
-  </div>
-</div>
+<app-carrito-offcanvas></app-carrito-offcanvas>
+<app-perfil-offcanvas></app-perfil-offcanvas>

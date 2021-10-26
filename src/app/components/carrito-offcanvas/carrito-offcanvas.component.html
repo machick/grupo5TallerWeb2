@@ -1,0 +1,42 @@
+<div
+  class="offcanvas offcanvas-end"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions-1"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title mx-auto" id="offcanvasWithBothOptionsLabel">
+      Carrito
+    </h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-carrito-offcanvas-item></app-carrito-offcanvas-item>
+    <app-carrito-offcanvas-item></app-carrito-offcanvas-item>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-danger text-nowrap" type="button">
+        Agregar más productos
+      </button>
+    </div>
+  </div>
+  <div class="container p-4 mb-4">
+    <div class="row align-items-start">
+      <div class="col">Subtotal</div>
+      <div class="col text-end">$250</div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col">Costo de envío</div>
+      <div class="col text-end">¡Gratis!</div>
+    </div>
+    <div class="row align-items-end">
+      <div class="col fw-bold">Total</div>
+      <div class="col text-end fw-bold">$250</div>
+    </div>
+  </div>
+</div>
