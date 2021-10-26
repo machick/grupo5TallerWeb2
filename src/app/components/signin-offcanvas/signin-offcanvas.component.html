@@ -1,44 +1,66 @@
-<form>
-  <img
-    class="mx-auto d-block"
-    id="logotipo"
-    src="../assets/img/logotipo.png"
-    alt=""
-  />
-  <h1 class="h3 mb-3 fw-normal">Por favor ingrese sus datos</h1>
-
-  <div class="form-floating">
-    <input
-      type="email"
-      class="form-control"
-      id="floatingInput"
-      placeholder="name@example.com"
-    />
-    <label for="floatingInput">Correo electrónico</label>
-  </div>
-  <div class="form-floating">
-    <input
-      type="password"
-      class="form-control"
-      id="floatingPassword"
-      placeholder="Password"
-    />
-    <label for="floatingPassword">Contraseña</label>
-  </div>
-
-  <div class="checkbox mb-3">
-    <label> <input type="checkbox" value="remember-me" /> Recordarme </label>
-  </div>
-  <div class="d-grid gap-2">
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
-    <!-- Button trigger modal -->
+<div
+  class="offcanvas offcanvas-end"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions-0"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header justify-content-end">
     <button
       type="button"
-      class="btn btn-success"
-      data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop"
-    >
-      Registrarse
-    </button>
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
   </div>
-</form>
+  <div class="offcanvas-body">
+    <form>
+      <img
+        class="mx-auto d-block"
+        id="logotipo"
+        src="../assets/img/logotipo.png"
+        alt=""
+      />
+      <h1 class="h3 mb-3 fw-normal">Por favor ingrese sus datos</h1>
+
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Correo electrónico</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me" /> Recordarme
+        </label>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Ingresar
+        </button>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-success"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          Registrarse
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
