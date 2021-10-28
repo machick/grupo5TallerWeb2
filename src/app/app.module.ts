@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarritoOffcanvasComponent } from './components/carrito-offcanvas/carrito-offcanvas.component';
 import { PerfilOffcanvasComponent } from './components/perfil-offcanvas/perfil-offcanvas.component';
 import { CarritoOffcanvasItemComponent } from './components/carrito-offcanvas-item/carrito-offcanvas-item.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CarritoOffcanvasItemComponent } from './components/carrito-offcanvas-it
     CarritoOffcanvasComponent,
     PerfilOffcanvasComponent,
     CarritoOffcanvasItemComponent,
+    CheckoutComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
