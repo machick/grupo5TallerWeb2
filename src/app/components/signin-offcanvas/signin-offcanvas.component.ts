@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-signin-offcanvas',
@@ -6,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin-offcanvas.component.css'],
 })
 export class SigninOffcanvasComponent implements OnInit {
-  constructor() {}
+  public email:any;
+  public password:any;
+  constructor(
+    private loginService: LoginService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
+   public login() {
+    return this.loginService.login(this.email, this.password)
+    .then((res) => {
+        console.log('salio todo bien');
+        console.log(res);
+    }).catch((err) => {
+      console.log('error');
+      console.log(err);
+    });
+  }
 }
