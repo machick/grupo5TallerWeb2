@@ -7,6 +7,7 @@
       id="validationServer01"
       value="Mark"
       required
+      [(ngModel)]="name"
     />
     <div class="valid-feedback">Se ve bien!</div>
   </div>
@@ -18,6 +19,7 @@
       id="validationServer02"
       value="Otto"
       required
+      [(ngModel)]="lastName"
     />
     <div class="valid-feedback">Se ve bien!</div>
   </div>
@@ -32,6 +34,7 @@
         id="validationServerCorreoElectronico"
         aria-describedby="inputGroupPrepend3 validationServerCorreoElectronicoFeedback"
         required
+        [(ngModel)]="email"
       />
       <div
         id="validationServerCorreoElectronicoFeedback"
@@ -102,6 +105,6 @@
     </div>
   </div>
   <div class="col-12">
-    <button class="btn btn-success" type="submit">Continuar</button>
+    <button class="btn btn-success" type="submit" (click) = "register()">Continuar</button>
   </div>
 </form>
