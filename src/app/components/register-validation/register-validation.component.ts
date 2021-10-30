@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/models/usuario/usuario';
 import { LoginService } from 'src/app/services/login.service';
+
 
 @Component({
   selector: 'app-register-validation',
@@ -13,7 +16,8 @@ export class RegisterValidationComponent implements OnInit {
   public lastName: any;
   public direction = 'calle falsa 132';
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +28,7 @@ export class RegisterValidationComponent implements OnInit {
     this.loginService.register(user)
     .then(() => {
       console.log('se registro correctamente');
+      window.location.reload();
     });
   }
 

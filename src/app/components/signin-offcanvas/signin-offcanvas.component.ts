@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class SigninOffcanvasComponent implements OnInit {
   public email:any;
   public password:any;
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -20,10 +22,7 @@ export class SigninOffcanvasComponent implements OnInit {
     return this.loginService.login(this.email, this.password)
     .then((res) => {
         console.log('salio todo bien');
-        console.log(res);
-    }).catch((err) => {
-      console.log('error');
-      console.log(err);
+        return this.router.navigate(['/home']);
     });
   }
 }

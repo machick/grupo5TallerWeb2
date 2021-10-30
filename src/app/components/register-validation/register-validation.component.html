@@ -7,6 +7,7 @@
       id="validationServer01"
       value="Mark"
       required
+      name="lastName"
       [(ngModel)]="name"
     />
     <div class="valid-feedback">Se ve bien!</div>
@@ -19,6 +20,7 @@
       id="validationServer02"
       value="Otto"
       required
+      name = "lastName"
       [(ngModel)]="lastName"
     />
     <div class="valid-feedback">Se ve bien!</div>
@@ -35,6 +37,7 @@
         aria-describedby="inputGroupPrepend3 validationServerCorreoElectronicoFeedback"
         required
         [(ngModel)]="email"
+        name="email"
       />
       <div
         id="validationServerCorreoElectronicoFeedback"
