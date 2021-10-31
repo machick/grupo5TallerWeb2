@@ -39,21 +39,9 @@
       </div>
     </div>
   </div>
-  <div class="position-relative p-3 d-flex justify-content-around">
+  <div class="position-relative p-3">
     <button type="button" class="btn btn-outline-danger" (click) = logout()>
       <i class="bi bi-x-circle"></i> Salir
     </button>
-    <button type="button" class="btn btn-outline-success" (click) ="verificacion = !verificacion">
-      <i class="bi bi-check-circle"></i> Verificar email
-    </button>
   </div>
-  <div *ngIf="verificacion" class="position-relative p-3 m-2" >
-    <span>Ingrese codigo: </span> <br>
-    <input   class="form-control"type="text" name="code" [(ngModel)]="code">
-    <label class="text-danger">Error verificar codigo</label> <br>
-    <button type="button" class="btn btn-outline-success mt-2" >
-      Verificar
-    </button> <br>
-  </div>
-
 </div>

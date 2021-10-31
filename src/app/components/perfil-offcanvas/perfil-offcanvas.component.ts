@@ -11,8 +11,6 @@ export class PerfilOffcanvasComponent implements OnInit {
   public name: any;
   public lastName: any;
   public email : any;
-  public verificacion=false;
-  public code = '';
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -23,7 +21,6 @@ export class PerfilOffcanvasComponent implements OnInit {
    this.name =  this.loginService.decodeMyToken().name;
     this.lastName = this.loginService.decodeMyToken().family_name;
     this.email = this.loginService.decodeMyToken().email;
-    console.log(this.loginService.decodeMyToken());
   }
 
   public logout(){
