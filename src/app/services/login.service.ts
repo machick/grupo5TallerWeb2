@@ -49,11 +49,8 @@ export class LoginService {
           password: user.password,
           direccion: user.direccion
     })
-      .toPromise()
-      .catch((err) => {
-        console.log('err register service');
-        console.log(err);
-      });;
+      .toPromise();
+
   }
   public logout():void {
     localStorage.clear();

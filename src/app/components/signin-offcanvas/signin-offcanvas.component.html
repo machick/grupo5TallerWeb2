@@ -45,7 +45,7 @@
         />
         <label for="floatingPassword">Contraseña</label>
       </div>
-
+      <span *ngIf="!isValid" class="text-danger">Correo y/o contraseña invalida</span>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me" /> Recordarme

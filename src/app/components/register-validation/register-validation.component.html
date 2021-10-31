@@ -3,27 +3,25 @@
     <label for="validationServer01" class="form-label">Nombre</label>
     <input
       type="text"
-      class="form-control is-valid"
+      class="form-control {{nameClass}}"
       id="validationServer01"
-      value="Mark"
       required
-      name="lastName"
+      name="name"
       [(ngModel)]="name"
     />
-    <div class="valid-feedback">Se ve bien!</div>
+    <div class="invalid-feedback">{{nameError}}</div>
   </div>
   <div class="col-md-4">
     <label for="validationServer02" class="form-label">Apellido</label>
     <input
       type="text"
-      class="form-control is-valid"
+      class="form-control {{lastNameClass}}"
       id="validationServer02"
-      value="Otto"
       required
       name = "lastName"
       [(ngModel)]="lastName"
     />
-    <div class="valid-feedback">Se ve bien!</div>
+    <div class="invalid-feedback">{{lastNameError}}</div>
   </div>
   <div class="col-md-4">
     <label for="validationServerCorreoElectronico" class="form-label"
@@ -32,7 +30,7 @@
     <div class="input-group has-validation">
       <input
         type="text"
-        class="form-control is-invalid"
+        class="form-control {{emailClass}}"
         id="validationServerCorreoElectronico"
         aria-describedby="inputGroupPrepend3 validationServerCorreoElectronicoFeedback"
         required
@@ -43,10 +41,37 @@
         id="validationServerCorreoElectronicoFeedback"
         class="invalid-feedback"
       >
-        Por favor escribe tu correo electrónico.
+        {{emailError}}
       </div>
     </div>
   </div>
+  <div class="col-md-4">
+    <label for="validationServer01" class="form-label">Contraseña</label>
+    <input
+      type="password"
+      class="form-control {{password1Class}}"
+      id="validationServer01"
+      value=""
+      required
+      name="password1"
+      [(ngModel)]="password1"
+    />
+    <div class="invalid-feedback">{{password1Error}}</div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationServer02" class="form-label">Repita Contraseña</label>
+    <input
+      type="password"
+      class="form-control {{password2Class}}"
+      id="validationServer02"
+      value=""
+      required
+      name = "password2"
+      [(ngModel)]="password2"
+    />
+    <div class="invalid-feedback">{{password2Error}}</div>
+  </div>
+
   <div class="col-md-6">
     <label for="validationServer03" class="form-label">City</label>
     <input

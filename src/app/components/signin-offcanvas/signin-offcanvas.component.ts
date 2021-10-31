@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class SigninOffcanvasComponent implements OnInit {
   public email:any;
   public password:any;
+  public isValid = true;
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -21,12 +22,10 @@ export class SigninOffcanvasComponent implements OnInit {
    public login() {
     return this.loginService.login(this.email, this.password)
     .then((res) => {
-        console.log('salio todo bien');
         return this.router.navigate(['/home']);
     })
     .catch((err) => {
-      console.log('error login');
-      console.log(err);
+        this.isValid = false;
     });
   }
 }
