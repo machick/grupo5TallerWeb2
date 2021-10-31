@@ -59,7 +59,13 @@ export class LoginService {
   public reenviarCodigo(emailResend: string): Promise<any> {
     return this.http.post(environment.API+'/resendConfirmCode', {
       email: emailResend
-    }).toPromise();
+    }).toPromise()
+    .then(()=> {
+      console.log('codigo reenviado');
+    })
+    .catch(() => {
+      console.log('error reenviar codigo');
+    });
   }
   public verificarEmail(emailCheck: string, codeCheck: string): Promise<any> {
     return this.http.post(environment.API+'/check', {
