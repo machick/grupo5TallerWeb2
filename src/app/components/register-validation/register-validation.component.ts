@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class RegisterValidationComponent implements OnInit {
   public email : any;
-  public password = '123456';
+  public password = 'Contraseña123456';
   public name: any;
   public lastName: any;
   public direction = 'calle falsa 132';

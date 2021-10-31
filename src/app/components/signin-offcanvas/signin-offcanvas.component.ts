@@ -23,6 +23,10 @@ export class SigninOffcanvasComponent implements OnInit {
     .then((res) => {
         console.log('salio todo bien');
         return this.router.navigate(['/home']);
+    })
+    .catch((err) => {
+      console.log('error login');
+      console.log(err);
     });
   }
 }

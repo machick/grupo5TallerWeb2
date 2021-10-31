@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Usuario } from '../models/usuario/usuario';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { Usuario } from '../models/usuario/usuario';
 export class LoginService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private jwtHelper: JwtHelperService,
   ) { }
 
   public login(emailLogin: string, passwordLogin: string): Promise<any> {
@@ -19,19 +21,26 @@ export class LoginService {
     })
       .toPromise()
        .then((resp: any) => {
-        console.log('resp servcics');
-        console.log(resp);
-          localStorage.setItem('nombre', resp.nombre);
-          localStorage.setItem('apellido', resp.apellido);
-          localStorage.setItem('email', resp.email);
-          return resp;
-      })
-      .catch((err) => {
-        console.log('err login service');
-        console.log(err);
+          localStorage.setItem('token', resp.idToken);
+          return resp.idToken;
       });
   }
 
+  public decodeMyToken(): any {
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('empty token');
+    }
+    return this.jwtHelper.decodeToken(token);
+  }
+
+  public getToken(): any {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return null;
+    }
+    return token;
+  }
   public register(user: Usuario): Promise<any> {
     return this.http.post(environment.API+'/register', {
           name: user.nombre,

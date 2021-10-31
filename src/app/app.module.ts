@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +17,11 @@ import { PerfilOffcanvasComponent } from './components/perfil-offcanvas/perfil-o
 import { CarritoOffcanvasItemComponent } from './components/carrito-offcanvas-item/carrito-offcanvas-item.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
+//import { environment } from 'src/environments/environment';
 
-
+export function tokenGetter(): string  | null{
+  return localStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,15 @@ import { FormsModule } from '@angular/forms';
     CarritoOffcanvasItemComponent,
     CheckoutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
+    JwtModule.forRoot({
+    config: {
+      // para jugar con los tokens aunque hay cosas q no tengo claras
+      //allowedDomains: environment.API_WHITELIST,
+      tokenGetter,
+    },
+  }),
+],
   providers: [],
   bootstrap: [AppComponent],
 })

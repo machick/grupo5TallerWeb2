@@ -17,13 +17,14 @@ export class PerfilOffcanvasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.name = localStorage.getItem('nombre');
-    this.lastName = localStorage.getItem('apellido');
-    this.email = localStorage.getItem('email');
+
+   this.name =  this.loginService.decodeMyToken().name;
+    this.lastName = this.loginService.decodeMyToken().family_name;
+    this.email = this.loginService.decodeMyToken().email;
   }
 
   public logout(){
-    //return this.loginService.logout();
+    this.loginService.logout();
     return this.router.navigate(['/']);
 
 
