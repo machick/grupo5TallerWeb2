@@ -17,6 +17,7 @@ import { PerfilOffcanvasComponent } from './components/perfil-offcanvas/perfil-o
 import { CarritoOffcanvasItemComponent } from './components/carrito-offcanvas-item/carrito-offcanvas-item.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 //import { environment } from 'src/environments/environment';
 
 export function tokenGetter(): string  | null{
@@ -36,6 +37,7 @@ export function tokenGetter(): string  | null{
     PerfilOffcanvasComponent,
     CarritoOffcanvasItemComponent,
     CheckoutComponent,
+    ForgotPasswordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
     JwtModule.forRoot({
