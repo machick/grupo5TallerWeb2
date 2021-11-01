@@ -64,7 +64,7 @@ export class RegisterValidationComponent implements OnInit {
       this.verificado = true;
       setTimeout(function(){
         window.location.reload();
-        }, 3000);
+        }, 5000);
     }).catch(()=> {
       this.verificarEmailError = true;
     });

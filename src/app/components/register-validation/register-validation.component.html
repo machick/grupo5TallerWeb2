@@ -151,7 +151,7 @@
     <p class="text-success">Correo verificado ya puede ingresar con su correo y contraseña !</p>
   </div>
 </div>
-  <div class="col-12">
+  <div class="col-12" *ngIf="!verificado">
     <button class="btn btn-success" type="submit" (click) = "register()">Continuar</button>
   </div>
 </form>

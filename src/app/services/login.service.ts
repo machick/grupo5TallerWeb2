@@ -73,12 +73,12 @@ export class LoginService {
           code: codeCheck
     }).toPromise();
   }
-  public olvideContraseña(emailResend: string): Promise<any> {
+  public olvidePassword(emailResend: string): Promise<any> {
     return this.http.post(environment.API+'/forgotPassword', {
       email: emailResend
     }).toPromise();
   }
-  public olvideContraseñaConfirmar(emailResend: string, codeCheck: string, newPassword: string): Promise<any> {
+  public olvidePasswordConfirmar(emailResend: string, codeCheck: string, newPassword: string): Promise<any> {
     return this.http.post(environment.API+'/forgotPassword/confirm', {
       email: emailResend,
       code: codeCheck,
