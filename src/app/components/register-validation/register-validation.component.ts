@@ -26,6 +26,11 @@ export class RegisterValidationComponent implements OnInit {
   public lastNameError = '';
   public lastNameClass = '';
   public direction = 'calle falsa 132';
+  public emailVerificar='';
+  public code = '';
+  public verificarEmail = false;
+  public verificarEmailError = false;
+  public verificado = false;
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -36,12 +41,12 @@ export class RegisterValidationComponent implements OnInit {
 
   public register() {
     if(this.isValid()){
-
+      this.emailVerificar = this.email;
       const user = new Usuario(this.email, this.password2, this.name, this.lastName, this.direction);
       return this.loginService.register(user)
       .then(() => {
+        this.verificarEmail=true;
         console.log('se registro correctamente');
-        window.location.reload();
       }).catch((err) => {
         console.log('err register service');
         console.log(err);
@@ -51,6 +56,25 @@ export class RegisterValidationComponent implements OnInit {
     }
 
   }
+
+  public verificar() {
+    return this.loginService.verificarEmail(this.emailVerificar, this.code)
+    .then(() => {
+      this.verificarEmail=false;
+      this.verificado = true;
+      setTimeout(function(){
+        window.location.reload();
+        }, 5000);
+    }).catch(()=> {
+      this.verificarEmailError = true;
+    });
+  }
+
+  public reenviarCodigo() {
+    return this.loginService.reenviarCodigo(this.emailVerificar);
+  }
+
+
 
   public isValid(){
     const nameReg = /^[a-z ,.'-]+$/i;

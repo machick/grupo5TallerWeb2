@@ -56,4 +56,34 @@ export class LoginService {
     localStorage.clear();
   }
 
+  public reenviarCodigo(emailResend: string): Promise<any> {
+    return this.http.post(environment.API+'/resendConfirmCode', {
+      email: emailResend
+    }).toPromise()
+    .then(()=> {
+      console.log('codigo reenviado');
+    })
+    .catch(() => {
+      console.log('error reenviar codigo');
+    });
+  }
+  public verificarEmail(emailCheck: string, codeCheck: string): Promise<any> {
+    return this.http.post(environment.API+'/check', {
+          email: emailCheck,
+          code: codeCheck
+    }).toPromise();
+  }
+  public olvidePassword(emailResend: string): Promise<any> {
+    return this.http.post(environment.API+'/forgotPassword', {
+      email: emailResend
+    }).toPromise();
+  }
+  public olvidePasswordConfirmar(emailResend: string, codeCheck: string, newPassword: string): Promise<any> {
+    return this.http.post(environment.API+'/forgotPassword/confirm', {
+      email: emailResend,
+      code: codeCheck,
+      password: newPassword
+    }).toPromise();
+  }
+
 }

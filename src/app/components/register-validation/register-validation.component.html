@@ -114,7 +114,7 @@
       Por favor ingresa un código postal válido.
     </div>
   </div>
-  <div class="col-12">
+ <!--  <div class="col-12">
     <div class="form-check">
       <input
         class="form-check-input is-invalid"
@@ -131,8 +131,27 @@
         Debés aceptar antes de continuar.
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="col-12">
+  <div *ngIf="verificarEmail" class="position-relative p-3 m-2" >
+    <p class="text-success">Registro completo le mandamos un mail con el codigo para verificar la cuenta por favor ingrese el codigo de verificacion</p>
+    <span>Ingrese codigo: </span> <br>
+    <input   class="form-control"type="text" name="code"
+      [(ngModel)]="code"
+    >
+    <label *ngIf="verificarEmailError" class="text-danger">Error verificar codigo</label> <br>
+    <button type="button" class="btn btn-outline-success mt-2" (click) = "verificar()">
+      Verificar
+    </button>
+    <button type="button" class="btn btn-outline-success mt-2 mx-2" (click) = "reenviarCodigo()">
+      Reenviar codigo
+    </button> <br>
+  </div>
+  <div *ngIf="verificado" class="position-relative p-3 m-2" >
+    <p class="text-success">Correo verificado ya puede ingresar con su correo y contraseña !</p>
+  </div>
+</div>
+  <div class="col-12" *ngIf="!verificado">
     <button class="btn btn-success" type="submit" (click) = "register()">Continuar</button>
   </div>
 </form>
