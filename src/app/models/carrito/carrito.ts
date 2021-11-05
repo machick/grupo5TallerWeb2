@@ -2,6 +2,7 @@ import { Producto } from '../producto/producto';
 
 export class Carrito {
   constructor(
+    public _id: string,
     public products?: [
       {
         _id: string;
@@ -9,9 +10,10 @@ export class Carrito {
         quantity: number;
         precioTotalPorProducto: number;
       }
-    ],
-    public estado?: boolean,
-    public precioTotalCompra?: number,
-    public fechaCompra?: Date
+    ]
   ) {}
+
+  public static serializarCarrito(json:any):Carrito{
+    return new this(json._id, json.products)
+  }
 }
