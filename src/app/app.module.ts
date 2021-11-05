@@ -18,6 +18,7 @@ import { CarritoOffcanvasItemComponent } from './components/carrito-offcanvas-it
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ProductoHomeComponent } from './components/producto-home/producto-home.component';
 //import { environment } from 'src/environments/environment';
 
 export function tokenGetter(): string  | null{
@@ -38,6 +39,7 @@ export function tokenGetter(): string  | null{
     CarritoOffcanvasItemComponent,
     CheckoutComponent,
     ForgotPasswordComponent,
+    ProductoHomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
     JwtModule.forRoot({
