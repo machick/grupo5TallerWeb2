@@ -10,11 +10,10 @@ export class CarritoService {
 
   constructor(
     private http: HttpClient) { }
-
-
-    public obtenerCarrito(_id:string): Promise<Carrito> {
-      return this.http.get(environment.API+'/obtenercarrito/'+_id, {}
+    public obtenerCarrito(usuario:string): Promise<Carrito> {
+      return this.http.get(environment.API+'/obtenercarrito/'+usuario, {}
       ).toPromise().then((res:any) => {
+        console.log(res);
         return Carrito.serializarCarrito(res);
       })
     }

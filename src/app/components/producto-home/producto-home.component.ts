@@ -24,7 +24,7 @@ export class ProductoHomeComponent implements OnInit {
   para despues agregarlo en el metodo de abajo, y ahi llamar al servicio para pasarlo
   a la vista del componente*/
   ngOnInit(): void {
-    this.array{this.productoservice.obtenerTodosLosProductos();}
+    // this.array{this.productoservice.obtenerTodosLosProductos();}
   }
 
 }
