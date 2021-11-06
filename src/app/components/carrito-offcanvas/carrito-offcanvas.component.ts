@@ -10,6 +10,7 @@ export class CarritoOffcanvasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
