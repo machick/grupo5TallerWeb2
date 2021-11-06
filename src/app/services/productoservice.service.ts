@@ -12,12 +12,26 @@ export class ProductoserviceService {
   { }
 
   
-  public obtenerTodosLosProductos(): Promise<any> {
-    return this.http.get(environment.API+'/home'
-    ).toPromise().then((res:any) => {
-      return Producto.serializarProducto(res) ;
-    })
-  }
+ /* public obtenerTodosLosProductos(): Promise<Array<Producto> {
+    return this.http.get(environment.API+'/home')
+    .toPromise().then((res: Array<any>) => {
+      return res.map((producto)) => {
+        return Producto.serializarProducto(Producto)};
+      })
+   */   
+
+      public obtenerTodosLosProductos(): Promise<Array<Producto>>{
+        return this.http.get(environment.API+'/home').toPromise()
+        .then((p: Array<any>)=>{
+          return p.map((producto)=>{
+            return Producto.serializarProducto(producto);
+          });
+        });
+
+
+      }
+    
+  
 
 
 
