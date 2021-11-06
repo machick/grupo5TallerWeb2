@@ -72,7 +72,8 @@
     <div class="invalid-feedback">{{password2Error}}</div>
   </div>
 
-  <div class="col-md-6">
+
+  <!-- <div class="col-md-6">
     <label for="validationServer03" class="form-label">City</label>
     <input
       type="text"
@@ -113,7 +114,7 @@
     <div id="validationServer05Feedback" class="invalid-feedback">
       Por favor ingresa un código postal válido.
     </div>
-  </div>
+  </div> -->
  <!--  <div class="col-12">
     <div class="form-check">
       <input
@@ -154,4 +155,5 @@
   <div class="col-12" *ngIf="!verificado">
     <button class="btn btn-success" type="submit" (click) = "register()">Continuar</button>
   </div>
+  <label *ngIf="errorRegistro" class="text-danger">{{errorRegistro}}</label> <br>
 </form>

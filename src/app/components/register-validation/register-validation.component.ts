@@ -31,6 +31,7 @@ export class RegisterValidationComponent implements OnInit {
   public verificarEmail = false;
   public verificarEmailError = false;
   public verificado = false;
+  public errorRegistro = '';
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -46,10 +47,12 @@ export class RegisterValidationComponent implements OnInit {
       return this.loginService.register(user)
       .then(() => {
         this.verificarEmail=true;
+        this.errorRegistro = '';
         console.log('se registro correctamente');
       }).catch((err) => {
         console.log('err register service');
         console.log(err);
+        this.errorRegistro = 'No se pudo registrar usuario';
       });
     }else{
       return console.log('Error validacion');
