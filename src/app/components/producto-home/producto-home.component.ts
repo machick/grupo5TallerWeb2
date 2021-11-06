@@ -10,21 +10,24 @@ import { Producto } from 'src/app/models/producto/producto';
   styleUrls: ['./producto-home.component.css']
 })
 export class ProductoHomeComponent implements OnInit {
- 
-  
+  public productos: Array<Producto> | undefined;
 
   constructor(private productoservice: ProductoserviceService,
-    private router: Router) 
+    private router: Router)
     { }
-
-   private array={}
 
   /*lo que intente hacer es injectar el servicio, que son las primeras
   tres lineas de arriba, luego lo declare en el constructor 'productoservice: ProductoserviceService,'
   para despues agregarlo en el metodo de abajo, y ahi llamar al servicio para pasarlo
   a la vista del componente*/
   ngOnInit(): void {
-    // this.array{this.productoservice.obtenerTodosLosProductos();}
+    this.obtenerProductos();
   }
 
+  public obtenerProductos(){
+    return this.productoservice.obtenerTodosLosProductos()
+    .then((productosObtenidos) => {
+      this.productos = productosObtenidos;
+    });
+  }
 }
