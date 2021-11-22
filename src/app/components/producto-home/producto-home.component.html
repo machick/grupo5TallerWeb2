@@ -1,7 +1,7 @@
 
 <!---aqui la idea es pasarle un array que contenga productos y mostrarlos aqui para visualizarlos en el home-->
-<div class="d-flex flex-wrap-reverse justify-content-around">
-  <div class="card" style="width: 18rem;" *ngFor="let product of productos">
+<div class="d-flex flex-wrap justify-content-start">
+  <div class="card mx-4 my-2" style="width: 18rem;" *ngFor="let product of productos">
       <img src="../../../assets/img/birra-ejemplo.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"> {{product.nombre}} </h5>

@@ -19,6 +19,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ProductoHomeComponent } from './components/producto-home/producto-home.component';
+import { environment } from 'src/environments/environment';
+import { LoginService } from './services/login.service';
 //import { environment } from 'src/environments/environment';
 
 export function tokenGetter(): string  | null{
@@ -45,12 +47,14 @@ export function tokenGetter(): string  | null{
     JwtModule.forRoot({
     config: {
       // para jugar con los tokens aunque hay cosas q no tengo claras
-      //allowedDomains: environment.API_WHITELIST,
+      //allowedDomains: environment.API,
+      //update: esto es importante ...al parecer es el q le da el permiso para mandar el token a distintas url en 
+      allowedDomains: environment.API_WHITELIST, //este caso nuestra api si le puede mandar el token 
       tokenGetter,
     },
   }),
 ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
