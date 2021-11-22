@@ -1,6 +1,6 @@
 
 <!---aqui la idea es pasarle un array que contenga productos y mostrarlos aqui para visualizarlos en el home-->
-<div class="d-flex flex-wrap justify-content-start">
+<div *ngIf="productos" class="d-flex flex-wrap justify-content-start">
   <div class="card mx-4 my-2" style="width: 18rem;" *ngFor="let product of productos">
       <img src="../../../assets/img/birra-ejemplo.jpg" class="card-img-top" alt="...">
       <div class="card-body">
@@ -12,8 +12,8 @@
         <li class="list-group-item">{{product.clasificacion}}</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">ver detalles</a>
-        <a href="#" class="card-link" icon="">agregar al carrito</a>
+        <button class="btn btn-success"> ver detalles </button>
+        <button class="btn btn-primary" (click)="agregarACarrito(product._id)"> agregar al carrito</button>
       </div>
     </div>
 

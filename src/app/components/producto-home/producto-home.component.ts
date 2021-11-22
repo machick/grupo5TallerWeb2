@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductoserviceService } from 'src/app/services/productoservice.service';
 import { Producto } from 'src/app/models/producto/producto';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class ProductoHomeComponent implements OnInit {
   public productos: Array<Producto> | undefined;
 
   constructor(private productoservice: ProductoserviceService,
+    private carritoService: CarritoService,
     private router: Router)
     { }
 
@@ -28,6 +30,12 @@ export class ProductoHomeComponent implements OnInit {
     return this.productoservice.obtenerTodosLosProductos()
     .then((productosObtenidos) => {
       this.productos = productosObtenidos;
+    });
+  }
+  public agregarACarrito(idProducto: any){
+    return this.carritoService.agregarACarrito(idProducto)
+    .then(() => {
+      window.location.reload();
     });
   }
 }

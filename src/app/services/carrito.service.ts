@@ -16,4 +16,12 @@ export class CarritoService {
         return Carrito.serializarCarrito(res);
       })
     }
+
+    public agregarACarrito(idProductoACargar: any){
+      return this.http.post(environment.API+'/agregaracarrito', {
+        idProducto: idProductoACargar,
+        cantidad: 1
+      }
+      ).toPromise();
+    }
 }
