@@ -24,4 +24,12 @@ export class CarritoService {
       }
       ).toPromise();
     }
+
+    public cambiarcantidad(idItemCambiar: any, operacionCambiar: any) {
+      return this.http.post(environment.API+'/cambiarcantidad', {
+        idItem: idItemCambiar,
+        operacion: operacionCambiar
+      }
+      ).toPromise();
+    }
 }

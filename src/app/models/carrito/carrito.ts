@@ -5,9 +5,9 @@ export class Carrito {
     public _id?: string,
     public items?: [
       {
-        _id: string;
-        producto: Producto;
-        cantidad: number;
+        _id?: string;
+        producto?: Producto;
+        cantidad?: number;
       }
     ],
     public subUsuario?: string,
@@ -18,7 +18,7 @@ export class Carrito {
   public static serializarCarrito(json:any):Carrito{
     let itemsProducts= [];
     itemsProducts = json.items.map((data: { _id: any; product: { _id: string; name: string; description: string; type: string; price: number; }; quantity: any; }) => {
-      let itemOne =  
+      let itemOne =
         {
           _id: data._id,
           producto: new Producto(data.product._id, data.product.name, data.product.description, data.product.type, data.product.price),
