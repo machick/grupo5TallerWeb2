@@ -21,6 +21,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ProductoHomeComponent } from './components/producto-home/producto-home.component';
 import { environment } from 'src/environments/environment';
 import { LoginService } from './services/login.service';
+import { AdminOffcanvasComponent } from './components/admin-offcanvas/admin-offcanvas.component';
 //import { environment } from 'src/environments/environment';
 
 export function tokenGetter(): string  | null{
@@ -42,6 +43,7 @@ export function tokenGetter(): string  | null{
     CheckoutComponent,
     ForgotPasswordComponent,
     ProductoHomeComponent,
+    AdminOffcanvasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
     JwtModule.forRoot({
