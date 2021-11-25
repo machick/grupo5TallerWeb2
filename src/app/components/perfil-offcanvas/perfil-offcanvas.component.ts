@@ -17,10 +17,9 @@ export class PerfilOffcanvasComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-   this.name =  this.loginService.decodeMyToken().name;
-    this.lastName = this.loginService.decodeMyToken().family_name;
-    this.email = this.loginService.decodeMyToken().email;
+    this.name =  this.loginService.decodeMyToken().userName;
+    this.lastName = this.loginService.decodeMyToken().userLastName;
+    this.email = this.loginService.decodeMyToken().userEmail;
   }
 
   public logout(){

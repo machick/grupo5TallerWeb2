@@ -14,7 +14,7 @@
     ></button>
   </div>
   <div class="offcanvas-body">
-    <form>
+    <form class="d-grid gap-2">
       <img
         class="mx-auto d-block"
         id="logotipo"
@@ -28,7 +28,7 @@
           type="email"
           class="form-control"
           id="floatingInput"
-          name = 'email'
+          name="email"
           placeholder="name@example.com"
           [(ngModel)]="email"
         />
@@ -39,39 +39,42 @@
           type="password"
           class="form-control"
           id="floatingPassword"
-          name = 'password'
+          name="password"
           placeholder="Password"
           [(ngModel)]="password"
         />
         <label for="floatingPassword">Contraseña</label>
       </div>
-      <span *ngIf="!isValid" class="text-danger">Correo y/o contraseña invalida</span>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me" /> Recordarme
-        </label><br>
-        <label
-        class="btn btn-danger text-white"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasWithBothOptions-1"
-        aria-controls="offcanvasWithBothOptions"
+      <span *ngIf="!isValid" class="text-danger"
+        >Correo y/o contraseña invalida</span
       >
-        Olvide contraseña
-      </label>
-      </div>
+
       <div class="d-grid gap-2">
-        <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">
+        <button
+          class="w-100 btn btn-lg btn-primary"
+          type="submit"
+          (click)="login()"
+        >
           Ingresar
         </button>
+        <a
+          class="btn btn-link text-decoration-none mx-auto"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions-1"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          ¿Olvidaste tu contraseña?
+        </a>
+        <hr />
         <!-- Button trigger modal -->
         <button
           type="button"
-          class="btn btn-success"
+          class="btn btn-success mx-2"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
         >
-          Registrarse
+          Crear nueva cuenta
         </button>
       </div>
     </form>

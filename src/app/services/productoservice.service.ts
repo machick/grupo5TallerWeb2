@@ -7,32 +7,24 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ProductoserviceService {
-
-  constructor(private http: HttpClient) 
+  constructor(private http: HttpClient)
   { }
-
-  
  /* public obtenerTodosLosProductos(): Promise<Array<Producto> {
     return this.http.get(environment.API+'/home')
     .toPromise().then((res: Array<any>) => {
       return res.map((producto)) => {
         return Producto.serializarProducto(Producto)};
       })
-   */   
-
-      public obtenerTodosLosProductos(): Promise<Array<Producto>>{
-        return this.http.get(environment.API+'/home').toPromise()
-        .then((p: Array<any>)=>{
-          return p.map((producto)=>{
+   */
+      public obtenerTodosLosProductos(): Promise<Array<Producto>> {
+        return this.http.get(environment.API+'/home', {})
+        .toPromise()
+        .then((data: any)=>{
+          const datos = Array.from(data);
+           return datos.map((producto)=>{
             return Producto.serializarProducto(producto);
           });
         });
-
-
       }
-    
-  
-
-
 
 }

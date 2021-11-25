@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API:'http://localhost:3000'
+  API:'http://localhost:3000',
+  API_WHITELIST:['localhost:3000']
   //API_WHITELIST: ['localhost:3000', 'localhost:3001', 'localhost:3002'],
 };
 

@@ -16,32 +16,86 @@
       aria-label="Close"
     ></button>
   </div>
-  <div class="offcanvas-body">
-    <app-carrito-offcanvas-item></app-carrito-offcanvas-item>
-    <app-carrito-offcanvas-item></app-carrito-offcanvas-item>
+  <div *ngIf="carrito" class="offcanvas-body">
+    <!-- <app-carrito-offcanvas-item *ngIf="carrito" [carrito] = "carrito"></app-carrito-offcanvas-item> -->
+    <div
+      *ngFor="let item of carrito.items"
+      class="card mb-2"
+      style="max-width: 540px"
+    >
+      <div class="row g-0">
+        <div class="col-md-4 d-flex flex-wrap align-items-center">
+          <img
+            src="../assets/img/birra-ejemplo.jpg"
+            class="img-fluid"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8" *ngIf="item.producto">
+          <div class="card-body" *ngIf="item.producto.precio && item.cantidad">
+            <h5 class="card-title">
+              {{ item.producto.nombre }} x {{ item.cantidad }}
+            </h5>
+            <p>
+              ${{ item.producto.precio * item.cantidad }} (c/u ${{
+                item.producto.precio
+              }})
+            </p>
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic outlined example"
+            >
+              <button
+                (click)="cambiarCantidad(item._id, 'menos')"
+                type="button"
+                class="btn btn-outline-primary"
+              >
+                <i class="bi bi-dash-lg"></i>
+              </button>
+              <button type="button" class="btn btn-outline-primary disabled">
+                {{ item.cantidad }}
+              </button>
+              <button
+                (click)="cambiarCantidad(item._id, 'mas')"
+                type="button"
+                class="btn btn-outline-primary"
+              >
+                <i class="bi bi-plus-lg"></i>
+              </button>
+            </div>
+            <button
+              (click)="cambiarCantidad(item._id, 'eliminar')"
+              type="button"
+              class="btn btn-outline-danger ms-2"
+            >
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-danger text-nowrap" type="button">
-        Agregar más productos
-      </button>
+      <a href="/home"
+        ><button class="btn btn-success text-nowrap" type="button">
+          Agregar más productos
+        </button></a
+      >
     </div>
   </div>
   <div class="container p-4 mb-4">
-    <div class="row align-items-start">
-      <div class="col">Subtotal</div>
-      <div class="col text-end">$250</div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col">Costo de envío</div>
-      <div class="col text-end">¡Gratis!</div>
-    </div>
     <div class="row align-items-end">
-      <div class="col fw-bold">Total</div>
-      <div class="col text-end fw-bold">$250</div>
+      <div class="col fw-bold">SubTotal</div>
+      <div class="col text-end fw-bold">${{ subtotal }}</div>
     </div>
     <div class="d-grid m-2 col-12 mx-auto">
-      <a href="http://localhost:4200/checkout" class="btn btn-danger text-nowrap">
+      <a
+        href="http://localhost:4200/checkout"
+        class="btn btn-primary text-nowrap"
+      >
         Continuar
-    </a>
+      </a>
     </div>
   </div>
 </div>

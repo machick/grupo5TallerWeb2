@@ -21,8 +21,8 @@ export class LoginService {
     })
       .toPromise()
        .then((resp: any) => {
-          localStorage.setItem('token', resp.idToken);
-          return resp.idToken;
+          localStorage.setItem('token', resp.token);
+          return resp.token;
       });
   }
 
