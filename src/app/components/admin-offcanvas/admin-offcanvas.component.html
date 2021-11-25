@@ -24,6 +24,8 @@
         type="text"
         placeholder="Ej: Cerveza Patagonia Weisse Lata 473ml"
         aria-label="default input example"
+        [(ngModel)]="newNombre"
+        name="nombre"
       />
       <label for="exampleFormControlTextarea1" class="form-label"
         >Descripción</label
@@ -32,14 +34,21 @@
         class="form-control"
         id="exampleFormControlTextarea1"
         rows="3"
+        [(ngModel)]="newDescripcion"
+        name="descripcion"
       ></textarea>
-      <select class="form-select mt-2" aria-label="Default select example">
+      <select
+        class="form-select mt-2"
+        aria-label="Default select example"
+        [(ngModel)]="newTipo"
+        name="tipo"
+      >
         <option selected>Selelccionar categoría</option>
-        <option value="1">Cervezas</option>
-        <option value="2">Vinos</option>
-        <option value="3">Sin alcohol</option>
-        <option value="4">Destilados</option>
-        <option value="5">Snacks</option>
+        <option value="cervezas">Cervezas</option>
+        <option value="vinos">Vinos</option>
+        <option value="sin-alcohol">Sin alcohol</option>
+        <option value="destilados">Destilados</option>
+        <option value="snacks">Snacks</option>
       </select>
       <div class="input-group mt-2">
         <span class="input-group-text">$</span>
@@ -47,11 +56,15 @@
           type="text"
           class="form-control"
           aria-label="Amount (to the nearest dollar)"
+          [(ngModel)]="newPrecio"
+          name="precio"
         />
         <span class="input-group-text">.00</span>
       </div>
       <div class="d-grid m-2 col-12 mx-auto">
-        <a href="#" class="btn btn-primary text-nowrap"> Confirmar </a>
+        <button class="btn btn-primary text-nowrap" (click)="agregarProducto()">
+          Confirmar
+        </button>
       </div>
     </form>
   </div>
