@@ -34,7 +34,6 @@ export class ForgotPasswordComponent implements OnInit {
     });
   }
   public olvideContrasenaConfirm(){ 
-    if(this.isValid()){
     return this.loginService.olvidePasswordConfirmar(this.email, this.code, this.password)
     .then(() => {
       this.error = false;
@@ -52,18 +51,10 @@ export class ForgotPasswordComponent implements OnInit {
   }
   }
 
-  public isValid(){
-    const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-   
-     if(!passwordReg.test(this.password)){
-  return false;
-    }else
-    return true;
+  
     
-
-  }
 
   
 
+  
 
-}
