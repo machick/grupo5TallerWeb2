@@ -28,3 +28,38 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+`
+'use strict';
+const express = require('express');
+const router = express.Router();
+const {Product} = require('@models');
+const logger = require('@logger');
+
+router.get('/:idRestaurant/:search?', (req, res) => {
+    let searchWord = req.params.search;
+    let products;
+    if(searchWord !== null && searchWord !== '' && searchWord) {
+        searchWord = req.params.search.trim();
+        products = Product.find({restaurant: req.params.idRestaurant, name: new RegExp(searchWord, 'i')})
+            .sort({createdAt: -1});
+
+    } else {
+        products = Product.find({restaurant: req.params.idRestaurant}).sort({createdAt: -1});
+    }
+
+    return products.then((data) => {
+        return res.status(200).json(data);
+    }).catch((err) => {
+        logger.error(`PRODUCTS OF RESTAURANT - ERROR ${err.message}`);
+        return res.status(500).json({
+            errorCode: 500,
+            userMessage: 'Internal error'
+        });
+    });
+
+});
+
+module.exports = router;
+
+`
