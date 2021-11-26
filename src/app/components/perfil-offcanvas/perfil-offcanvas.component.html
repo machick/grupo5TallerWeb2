@@ -37,6 +37,7 @@
           >Mis cupones</a
         >
         <a
+          *ngIf="userRol === 'admin'"
           type="button"
           class="list-group-item list-group-item-action"
           data-bs-toggle="offcanvas"
