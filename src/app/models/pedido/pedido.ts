@@ -12,6 +12,7 @@ export class Pedido {
         public subUsuario?: string,
         public direccion?: string,
         public aclaraciones?: string,
+        public total?: number,
         public createdAt?: Date,
         public updatedAt?: Date
       ) {}
@@ -30,6 +31,6 @@ export class Pedido {
     
     
     
-        return new this(json._id, itemsProducts, json.subUsuario, json.direccion, json.aclaraciones, new Date(json.createdAt), new Date(json.updatedAt) );
+        return new this(json._id, itemsProducts, json.subUsuario, json.direccion, json.aclaraciones,json.total, new Date(json.createdAt), new Date(json.updatedAt) );
       }
     }    

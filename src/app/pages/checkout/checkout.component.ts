@@ -48,7 +48,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   public agregarPedido(){
-    return this.pedidoService.agregarPedido(this.direccion, this.aclaraciones)
+    return this.pedidoService.agregarPedido(this.direccion, this.aclaraciones, this.subtotal)
     .then((res) => {
         return this.router.navigate(['/home']);
     })
