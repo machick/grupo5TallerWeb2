@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoserviceService } from 'src/app/services/productoservice.service';
 import { FileService } from 'src/app/services/file.service';
 import { environment } from 'src/environments/environment';
+import { Producto } from 'src/app/models/producto/producto';
 
 @Component({
   selector: 'app-admin-offcanvas',
@@ -9,6 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./admin-offcanvas.component.css'],
 })
 export class AdminOffcanvasComponent implements OnInit {
+  public producto: Producto | undefined;
   public newNombre: any;
   public newDescripcion: any;
   public newTipo: any;
@@ -16,7 +18,7 @@ export class AdminOffcanvasComponent implements OnInit {
   public Modelvalue = 'select';
   public selectedTags = [];
   public imageFile:any;
-  public fileRoute = environment.API_URL_IMAGE;
+  public fileRoute = environment.API_URL_IMAGE+'/public';
   public fileSize = Number(environment.FILE_SIZE);
   public fileSizeText = environment.FILE_SIZE_TEXT;
   public deletedImage = false;
@@ -46,7 +48,7 @@ export class AdminOffcanvasComponent implements OnInit {
       });
   }
 
-  
+
   public validateFile(mime: any, size: number) {
     const validateFile = {
       mime: false,
@@ -68,6 +70,13 @@ export class AdminOffcanvasComponent implements OnInit {
   }
 
   public onUploadImage(event: any) {
+    this.producto = new Producto(undefined,
+      this.newNombre,
+      this.newDescripcion,
+      this.newTipo,
+      this.newPrecio
+    );
+    console.log(this.producto);
     const file = event.target.files[0];
     const validateFile = this.validateFile(file.type, file.size);
     if (!validateFile.mime) {
@@ -80,10 +89,12 @@ export class AdminOffcanvasComponent implements OnInit {
       this.error.show = true;
       return false;
     }
-    return this.fileService.fileUpload(file, 'menu')
+    return this.fileService.fileUpload(file, 'producto')
     .then((fileToSave: any) => {
       console.log('todo bien');
       this.imageFile = fileToSave;
+      this.imageFile.path = this.imageFile.path.replace('.','');
+      console.log(this.imageFile);
       //this.product.image = fileToSave;
       this.error.show = false;
     })

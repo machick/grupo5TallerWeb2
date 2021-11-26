@@ -1,10 +1,10 @@
 export class Producto {
     constructor(
-        public _id: string,
-        public nombre:string,
-        public descripcion:string,
-        public clasificacion:string,
-        public precio:number
+        public _id?: string,
+        public nombre?:string,
+        public descripcion?:string,
+        public clasificacion?:string,
+        public precio?:number
     ){}
 
     /*se crea un metodo para serializar el json que recibe desde la api
