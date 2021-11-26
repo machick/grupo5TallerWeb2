@@ -63,7 +63,6 @@
       </div>
       <input class="form-control" type="file" id="input-asset" (change)="onUploadImage($event)" value=" ">
       <div class="container-image-uploaded" *ngIf="producto">
-        {{fileRoute + imageFile.path}}
         <img class="file-uploaded" target="_blank" src="{{fileRoute+imageFile.path}}">
       </div>
       <div class="d-grid m-2 col-12 mx-auto">

@@ -18,7 +18,7 @@ export class AdminOffcanvasComponent implements OnInit {
   public Modelvalue = 'select';
   public selectedTags = [];
   public imageFile:any;
-  public fileRoute = environment.API_URL_IMAGE+'/public';
+  public fileRoute = environment.API_URL_IMAGE;
   public fileSize = Number(environment.FILE_SIZE);
   public fileSizeText = environment.FILE_SIZE_TEXT;
   public deletedImage = false;
