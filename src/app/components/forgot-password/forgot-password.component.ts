@@ -11,9 +11,13 @@ export class ForgotPasswordComponent implements OnInit {
   public error = false;
   public code = '';
   public password = '';
+  public passwordError= '';
+  public passwordClass = '';
   public codigoVerificacion = true;
   public cambiarPassword = false;
   public nueva = false;
+  public codeError= '';
+  public codeClass= '';
   public codigoReenviado = false;
   constructor(
     private loginService: LoginService
@@ -34,6 +38,7 @@ export class ForgotPasswordComponent implements OnInit {
     });
   }
   public olvideContrasenaConfirm(){ 
+    if(this.isValid()){
     return this.loginService.olvidePasswordConfirmar(this.email, this.code, this.password)
     .then(() => {
       this.error = false;
@@ -47,8 +52,46 @@ export class ForgotPasswordComponent implements OnInit {
     .catch(() => {
       this.error = true;
     });
+    }
+    else
+    {
+      return console.log('Error validacion');
+    }
   
   }
+public isValid(){
+  const expresion=/^\d*$/;
+  if(!this.code) {
+    this.codeError = 'ingrese codigo';
+    this.codeClass = 'is-invalid';
+    console.log('deberia dar error');
+    return false;
+  }else if(!expresion.test(this.code)){
+    console.log('xczcx');
+    this.codeError = 'Nombre no valido';
+    this.codeClass = 'is-invalid';
+    return false;
+  }
+  this.codeClass = 'is-valid';
+
+  const passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+  if(!this.password)
+  {
+    this.passwordError = 'ingrese password ';
+    this.codeClass= 'is-invalid';
+    console.log('deberia dar erro');
+    return false;
+  }else if(!passwordReg.test(this.code))
+  {
+    this.passwordError = 'password no valida';
+    this.passwordClass = 'is-invalid';
+    return false;
+  }
+  this.passwordClass= 'is-valid';
+  return true;
+  
+}
+
   }
 
   
