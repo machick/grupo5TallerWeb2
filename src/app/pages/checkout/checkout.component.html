@@ -1,14 +1,7 @@
+<app-navbar></app-navbar>
 <app-carrito-offcanvas></app-carrito-offcanvas>
 
 <div class="container">
-  <div class="text-center">
-    <a href="#" class="d-block mx-auto mb-4"
-      ><img
-        src="../assets/img/imagotipo.png"
-        alt="BirrApp Imagotipo"
-        id="imagotipo"
-    /></a>
-  </div>
   <main>
     <div class="row g-5 py-5">
       <!-- Porductos del carrito -->
@@ -54,11 +47,13 @@
         <div>
           <h6 class="my-0">Total a pagar</h6>
         </div>
-        <span class="text-muted">${{ subtotal}}</span>
+        <span class="text-muted">${{subtotal}}</span>
       </li>
         <form>
           <div class="input-group">
-            <button type="submit" class="btn btn-primary w-100 mt-2">
+            <button 
+            (click)="agregarPedido()"
+            type="submit" class="btn btn-primary w-100 mt-2">
               Ir a Pagar
             </button>
           </div>
@@ -71,14 +66,20 @@
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 class="my-0">Recibir ahora en</h6>
-              <small class="text-muted">General Madariaga 3935</small>
+              <h6 class="my-0">Recibir ahora en</h6><input
+              type="text"
+              class="form-control"
+              id="direccion"
+              name="direccion"
+              placeholder="Direccion"
+              [(ngModel)]="direccion"
+            />
             </div>
           </li>
           <li class="list-group-item lh-sm">
             <div>
               <h6 class="my-0">Aclaraciones de tu pedido</h6>
-              <textarea class="form-control mt-2" rows="8"></textarea>
+              <textarea class="form-control mt-2" rows="8" [(ngModel)]="aclaraciones"></textarea>
             </div>
           </li>
         </ul>

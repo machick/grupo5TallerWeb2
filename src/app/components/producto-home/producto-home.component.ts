@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 export class ProductoHomeComponent implements OnInit {
   public productos: Array<Producto> | undefined;
   public fileRoute = environment.API_URL_IMAGE;
+  public nombre = '';
+
   constructor(private productoservice: ProductoserviceService,
     private carritoService: CarritoService,
     private router: Router)
@@ -38,6 +40,15 @@ export class ProductoHomeComponent implements OnInit {
     return this.carritoService.agregarACarrito(idProducto)
     .then(() => {
       window.location.reload();
+    });
+  }
+
+  public filtrarProductos()
+  {
+    //aqui llamo al servicio donde filtra por nombre para luego obtener un array de productos que tenga el nombre pedido
+    return this.productoservice.filtrarProductoPorNombre(this.nombre).then((productosObtenidos)=>
+    {this.productos = productosObtenidos;}).then(()=> {
+      //window.location.reload();
     });
   }
 }

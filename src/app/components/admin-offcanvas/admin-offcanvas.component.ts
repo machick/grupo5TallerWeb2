@@ -33,7 +33,8 @@ export class AdminOffcanvasComponent implements OnInit {
     private fileService: FileService
     ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   public agregarProducto() {
     return this.productoService
