@@ -17,11 +17,17 @@ export class Carrito {
 
   public static serializarCarrito(json:any):Carrito{
     let itemsProducts= [];
-    itemsProducts = json.items.map((data: { _id: any; product: { _id: string; name: string; description: string; type: string; price: number; }; quantity: any; }) => {
+    itemsProducts = json.items.map((data: { _id: any; product: { _id: string; name: string; description: string; type: string; price: number; imagePath: string}; quantity: any; }) => {
       let itemOne =
         {
           _id: data._id,
-          producto: new Producto(data.product._id, data.product.name, data.product.description, data.product.type, data.product.price),
+          producto: new Producto(data.product._id,
+             data.product.name,
+             data.product.description,
+             data.product.type,
+             data.product.price,
+             data.product.imagePath
+            ),
           cantidad: data.quantity
         };
         return itemOne;

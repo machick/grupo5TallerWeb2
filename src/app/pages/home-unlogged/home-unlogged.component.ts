@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-unlogged',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-unlogged.component.css'],
 })
 export class HomeUnloggedComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    console.log('HOla mundo ahre');
+    if(localStorage.getItem('token') !== null){
+      this.router.navigate(['/home']);
+    }
   }
 }

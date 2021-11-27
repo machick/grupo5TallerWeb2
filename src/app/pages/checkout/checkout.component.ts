@@ -16,12 +16,12 @@ export class CheckoutComponent implements OnInit {
   public direccion = "";
   public aclaraciones = "";
 
-  
+
 
   constructor(
     private carritoService : CarritoService,
     private pedidoService : PedidoService,
-    private router: Router) 
+    private router: Router)
     { }
 
   ngOnInit(): void {
@@ -54,6 +54,6 @@ export class CheckoutComponent implements OnInit {
     })
     .catch((err) => {
       console.log('error al guardar pedido');
-    }); 
+    });
   }
 }

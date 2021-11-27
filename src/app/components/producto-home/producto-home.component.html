@@ -35,7 +35,7 @@
       <div class="col" *ngFor="let product of productos">
         <div class="card shadow m-3 border-0 bg-light" style="width: 18rem">
           <img
-            src="../../../assets/img/birra-ejemplo.jpg"
+            src="{{fileRoute+product.imagePath}}"
             class="card-img-top"
             alt="..."
           />

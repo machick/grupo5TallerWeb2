@@ -12,7 +12,8 @@ export class ProductoserviceService {
     newNombre: any,
     newDescripcion: any,
     newTipo: any,
-    newPrecio: number
+    newPrecio: number,
+    newImagePath: string
   ): any {
     return this.http
       .post(environment.API + '/nuevoproducto', {
@@ -20,6 +21,7 @@ export class ProductoserviceService {
         descripcion: newDescripcion,
         tipo: newTipo,
         precio: newPrecio,
+        imagePath: newImagePath
       })
       .toPromise();
     /*.then((res: Array<any>) => {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Carrito } from 'src/app/models/carrito/carrito';
 import { CarritoService } from 'src/app/services/carrito.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-carrito-offcanvas',
@@ -10,7 +11,10 @@ import { CarritoService } from 'src/app/services/carrito.service';
 export class CarritoOffcanvasComponent implements OnInit {
   public carrito: any;
   public subtotal = 0;
-  constructor(private carritoService: CarritoService) {}
+  public fileRoute = environment.API_URL_IMAGE;
+  constructor(
+    private carritoService : CarritoService
+  ) { }
 
   ngOnInit(): void {
     this.obtenerCarrito();

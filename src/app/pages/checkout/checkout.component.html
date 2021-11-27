@@ -21,28 +21,13 @@
           <li class="list-group-item d-flex justify-content-between">
             <a
               class="text-decoration-none"
-              href="#"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasWithBothOptions-1"
-              aria-controls="offcanvasWithBothOptions"
+              href="/home"
             >
               Agregar mas productos</a
             >
           </li>
         </ul>
 
-        <form class="card p-2">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Código de descuento"
-            />
-            <button type="submit" class="btn btn-outline-success">
-              Reclamar
-            </button>
-          </div>
-        </form>
         <li class="list-group-item d-flex justify-content-between lh-sm">
         <div>
           <h6 class="my-0">Total a pagar</h6>
@@ -51,7 +36,7 @@
       </li>
         <form>
           <div class="input-group">
-            <button 
+            <button
             (click)="agregarPedido()"
             type="submit" class="btn btn-primary w-100 mt-2">
               Ir a Pagar
