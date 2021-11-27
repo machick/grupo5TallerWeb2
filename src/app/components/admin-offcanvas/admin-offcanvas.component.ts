@@ -13,9 +13,8 @@ export class AdminOffcanvasComponent implements OnInit {
   public newPrecio: any;
   constructor(private productoService: ProductoserviceService) {}
 
-  
-
-  constructor() { }
+  ngOnInit(): void {
+  }
 
   public agregarProducto() {
     return this.productoService
