@@ -32,4 +32,10 @@ export class CarritoService {
       }
       ).toPromise();
     }
+     public repetirPedido(idPedido: any){
+       return this.http.post(environment.API+'/repetirPedido', {
+         idPedido: idPedido
+       }).toPromise();
+     }
+
 }
