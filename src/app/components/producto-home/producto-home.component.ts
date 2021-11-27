@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProductoserviceService } from 'src/app/services/productoservice.service';
 import { Producto } from 'src/app/models/producto/producto';
 import { CarritoService } from 'src/app/services/carrito.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { CarritoService } from 'src/app/services/carrito.service';
 })
 export class ProductoHomeComponent implements OnInit {
   public productos: Array<Producto> | undefined;
-
+  public fileRoute = environment.API_URL_IMAGE;
   constructor(private productoservice: ProductoserviceService,
     private carritoService: CarritoService,
     private router: Router)
@@ -30,6 +31,7 @@ export class ProductoHomeComponent implements OnInit {
     return this.productoservice.obtenerTodosLosProductos()
     .then((productosObtenidos) => {
       this.productos = productosObtenidos;
+      console.log(this.productos);
     });
   }
   public agregarACarrito(idProducto: any){
