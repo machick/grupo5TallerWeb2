@@ -38,4 +38,17 @@ export class ProductoserviceService {
         });
       });
   }
+
+  public filtrarProductoPorNombre(nombreIngresado: string): Promise<Array<Producto>> {
+    return this.http
+    .post(environment.API + '/Productos', {nombre:nombreIngresado}).toPromise()
+    .then((data: any)=>{
+      const datos = Array.from(data);
+      return datos.map((producto)=>{
+        return Producto.serializarProducto(producto);
+      });
+    });
+  }
+
+
 }

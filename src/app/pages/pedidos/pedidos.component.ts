@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PedidosComponent implements OnInit {
   public pedidos: any;
-
+  
   constructor(private pedidoService : PedidoService,
     private router: Router) { }
 
