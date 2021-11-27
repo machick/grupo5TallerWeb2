@@ -45,7 +45,7 @@ export class ProductoHomeComponent implements OnInit {
     //aqui llamo al servicio donde filtra por nombre para luego obtener un array de productos que tenga el nombre pedido
     return this.productoservice.filtrarProductoPorNombre(this.nombre).then((productosObtenidos)=>
     {this.productos = productosObtenidos;}).then(()=> {
-      window.location.reload();
+      //window.location.reload();
     });
   }
 }
