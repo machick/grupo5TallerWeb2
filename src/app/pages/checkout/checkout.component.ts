@@ -13,10 +13,10 @@ export class CheckoutComponent implements OnInit {
   public subtotal = 0;
   public cantidad = 0;
 
-  
+
 
   constructor(
-    private carritoService : CarritoService) 
+    private carritoService : CarritoService)
     { }
 
   ngOnInit(): void {

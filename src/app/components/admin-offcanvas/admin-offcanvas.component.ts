@@ -41,7 +41,8 @@ export class AdminOffcanvasComponent implements OnInit {
         this.newNombre,
         this.newDescripcion,
         this.newTipo,
-        this.newPrecio
+        this.newPrecio,
+        this.imageFile.path
       )
       .then(() => {
         window.location.reload();
