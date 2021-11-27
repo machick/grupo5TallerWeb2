@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PedidosComponent implements OnInit {
   public pedidos: any;
-  
+
   constructor(private pedidoService : PedidoService,
     private router: Router,
     private carritoService : CarritoService) { }
@@ -22,8 +22,12 @@ export class PedidosComponent implements OnInit {
   public obtenerPedidos(){
     return this.pedidoService.obtenerPedidos()
     .then((pedidos)=>{
+      console.log('bien');
       this.pedidos = pedidos;
-    })
+    }).catch((err)=> {
+      console.log('mal');
+      console.log(err);
+    });
   }
 
   public repetirPedido(idPedido: any){

@@ -16,21 +16,21 @@ export class Pedido {
         public createdAt?: Date,
         public updatedAt?: Date
       ) {}
-    
+
       public static serializarPedido(json:any):Pedido{
         let itemsProducts= [];
-        itemsProducts = json.items.map((data: { _id: any; product: { _id: string; name: string; description: string; type: string; price: number; }; quantity: any; }) => {
+        itemsProducts = json.items.map((data: { _id: any; product: { _id: string; name: string; description: string; type: string; price: number; imagePath: string }; quantity: any; }) => {
           let itemOne =
             {
               _id: data._id,
-              producto: new Producto(data.product._id, data.product.name, data.product.description, data.product.type, data.product.price),
+              producto: new Producto(data.product._id, data.product.name, data.product.description, data.product.type, data.product.price, data.product.imagePath),
               cantidad: data.quantity
             };
             return itemOne;
         });
-    
-    
-    
+
+
+
         return new this(json._id, itemsProducts, json.subUsuario, json.direccion, json.aclaraciones,json.total, new Date(json.createdAt), new Date(json.updatedAt) );
       }
-    }    
+    }
