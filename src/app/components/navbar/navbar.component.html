@@ -1,5 +1,5 @@
-<nav class="navbar navbar-light bg-light p-0 shadow-sm">
-  <div class="container">
+<nav class="navbar navbar-light  p-0 shadow-sm">
+  <div class="container modo">
     <a class="navbar-brand" href="/">
       <img
         class="float-start"
@@ -29,6 +29,8 @@
         <i class="bi bi-person-circle"></i>
         Perfil
       </button>
+      <button (click)="changeTheme('default')">Default</button>&nbsp;&nbsp;
+      <button (click)="changeTheme('dark')">Dark</button>
     </div>
   </div>
 </nav>

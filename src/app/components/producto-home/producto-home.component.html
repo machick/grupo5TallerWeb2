@@ -33,7 +33,7 @@
   <div *ngIf="productos" class="container">
     <div class="row row-cols-4">
       <div class="col" *ngFor="let product of productos">
-        <div class="card shadow m-3 border-0 bg-light" style="width: 18rem">
+        <div class="card shadow m-3 border-0 " style="width: 18rem">
           <img
             src="{{fileRoute+product.imagePath}}"
             class="card-img-top"
@@ -43,7 +43,7 @@
             <h5 class="card-title">{{ product.nombre }}</h5>
             <p class="card-text m-0">{{ product.descripcion }}</p>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-light fw-bolder">
+              <li class="list-group-item  fw-bolder">
                 ${{ product.precio }}
               </li>
             </ul>
