@@ -9,7 +9,7 @@ import { THEMES } from './theme-config';
 export class ThemeService {
 
   constructor(@Inject(DOCUMENT) private document: Document) { 
-    if(! localStorage.getItem('themeSelect') || !(localStorage.getItem('token'))){
+    if(!localStorage.getItem('themeSelect')){
       this.setTheme('default');
     }
   }
