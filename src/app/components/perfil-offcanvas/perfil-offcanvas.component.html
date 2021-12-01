@@ -1,12 +1,12 @@
 <div
-  class="offcanvas offcanvas-end"
+  class="modo offcanvas offcanvas-end"
   data-bs-scroll="true"
   tabindex="-1"
   id="offcanvasWithBothOptions-2"
   aria-labelledby="offcanvasWithBothOptionsLabel"
 >
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title mx-auto" id="offcanvasWithBothOptionsLabel">
+  <div class="modo offcanvas-header">
+    <h5 class="modo offcanvas-title mx-auto" id="offcanvasWithBothOptionsLabel">
       Perfil
     </h5>
     <button
@@ -16,27 +16,27 @@
       aria-label="Close"
     ></button>
   </div>
-  <div class="offcanvas-body">
-    <div class="card">
+  <div class="modo offcanvas-body">
+    <div class="modo card">
       <!-- <img
         src="../assets/img/perfil-ejemplo.jpg"
-        class="card-img-top px-5"
+        class="modo card-img-top px-5"
         alt="..."
       /> -->
-      <div class="card-body d-grid">
-        <h5 class="card-title mx-auto">{{ name }} {{ lastName }}</h5>
-        <p class="card-text mx-auto">{{ email }}</p>
-        <!-- <p class="card-text mx-auto">+549 (11) 2222-3333</p>
-        <a class="link-primary text-decoration-none mx-auto" href="/">Editar</a> -->
+      <div class="modo card-body d-grid">
+        <h5 class="modo card-title mx-auto">{{ name }} {{ lastName }}</h5>
+        <p class="modo card-text mx-auto">{{ email }}</p>
+        <!-- <p class="modo card-text mx-auto">+549 (11) 2222-3333</p>
+        <a class="modo link-primary text-decoration-none mx-auto" href="/">Editar</a> -->
       </div>
-      <div class="list-group">
-        <a href="/pedidos" class="list-group-item list-group-item-action"
+      <div class="modo list-group">
+        <a href="/pedidos" class="modo list-group-item list-group-item-action"
           >Mis pedidos</a
         >
         <a
           *ngIf="userRol === 'admin'"
           type="button"
-          class="list-group-item list-group-item-action"
+          class="modo list-group-item list-group-item-action"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasWithBothOptions-3"
           aria-controls="offcanvasWithBothOptions"
@@ -45,8 +45,8 @@
       </div>
     </div>
   </div>
-  <div class="d-grid p-2 m-2">
-    <button type="button" class="btn btn-outline-danger" (click)="logout()">
+  <div class="modo d-grid p-2 m-2">
+    <button type="button" class="btn btn-danger" (click)="logout()">
       <i class="bi bi-x-circle"></i> Cerrar sesión
     </button>
   </div>

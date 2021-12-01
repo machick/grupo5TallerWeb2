@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="row mt-3">
-    <div class="col"></div>
-    <div class="col">
-      <div class="row">
-        <form class="d-flex mx-auto">
+<div class="modo container">
+  <div class="modo row mt-3">
+    <div class="modo col"></div>
+    <div class="modo col">
+      <div class="modo row">
+        <form class="modo d-flex mx-auto">
           <input
             aria-label="Search"
             class="form-control shadow-sm"
@@ -13,7 +13,7 @@
             [(ngModel)]="nombre"
           />
           <button
-            class="btn btn-outline-success shadow-sm"
+            class="btn btn-success shadow-sm"
             placeholder="Search"
             type="submit"
             name="enviar"
@@ -25,25 +25,25 @@
         </form>
       </div>
     </div>
-    <div class="col"></div>
+    <div class="modo col"></div>
   </div>
 
   <!---aqui la idea es pasarle un array que contenga productos y mostrarlos aqui para visualizarlos en el home-->
 
-  <div *ngIf="productos" class="container">
-    <div class="row row-cols-4">
-      <div class="col" *ngFor="let product of productos">
-        <div class="card shadow m-3 border-0 " style="width: 18rem">
+  <div *ngIf="productos" class="modo container">
+    <div class="modo row row-cols-4">
+      <div class="modo col" *ngFor="let product of productos">
+        <div class="modo card shadow m-3 border-0 " style="width: 18rem">
           <img
             src="{{fileRoute+product.imagePath}}"
-            class="card-img-top"
+            class="modo card-img-top"
             alt="..."
           />
-          <div class="card-body">
-            <h5 class="card-title">{{ product.nombre }}</h5>
-            <p class="card-text m-0">{{ product.descripcion }}</p>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item  fw-bolder">
+          <div class="modo card-body">
+            <h5 class="modo card-title">{{ product.nombre }}</h5>
+            <p class="modo card-text m-0">{{ product.descripcion }}</p>
+            <ul class="modo list-group list-group-flush">
+              <li class="modo list-group-item  fw-bolder">
                 ${{ product.precio }}
               </li>
             </ul>

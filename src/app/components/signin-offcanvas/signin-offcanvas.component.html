@@ -1,11 +1,11 @@
 <div
-  class="offcanvas offcanvas-end"
+  class="modo offcanvas offcanvas-end"
   data-bs-scroll="true"
   tabindex="-1"
   id="offcanvasWithBothOptions-0"
   aria-labelledby="offcanvasWithBothOptionsLabel"
 >
-  <div class="offcanvas-header justify-content-end">
+  <div class="modo offcanvas-header justify-content-end">
     <button
       type="button"
       class="btn-close text-reset"
@@ -13,15 +13,15 @@
       aria-label="Close"
     ></button>
   </div>
-  <div class="offcanvas-body">
-    <form class="d-grid gap-2">
+  <div class="modo offcanvas-body">
+    <form class="modo d-grid gap-2">
       <img
-        class="mx-auto d-block"
+        class="modo mx-auto d-block"
         id="logotipo"
         src="../assets/img/logotipo.png"
         alt=""
       />
-      <h1 class="h3 mb-3 fw-normal">Por favor ingrese sus datos</h1>
+      <h1 class="modo h3 mb-3 fw-normal">Por favor ingrese sus datos</h1>
 
       <div class="form-floating">
         <input
@@ -45,13 +45,13 @@
         />
         <label for="floatingPassword">Contraseña</label>
       </div>
-      <span *ngIf="!isValid" class="text-danger"
+      <span *ngIf="!isValid" class="modo text-danger"
         >Correo y/o contraseña invalida</span
       >
 
-      <div class="d-grid gap-2">
+      <div class="modo d-grid gap-2">
         <button
-          class="w-100 btn btn-lg btn-primary"
+          class="modo w-100 btn btn-lg btn-primary"
           type="submit"
           (click)="login()"
         >

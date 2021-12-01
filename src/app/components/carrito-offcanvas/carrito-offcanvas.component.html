@@ -1,12 +1,12 @@
 <div
-  class="offcanvas offcanvas-end"
+  class="modo offcanvas offcanvas-end"
   data-bs-scroll="true"
   tabindex="-1"
   id="offcanvasWithBothOptions-1"
   aria-labelledby="offcanvasWithBothOptionsLabel"
 >
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title mx-auto" id="offcanvasWithBothOptionsLabel">
+  <div class="modo offcanvas-header">
+    <h5 class="modo offcanvas-title mx-auto" id="offcanvasWithBothOptionsLabel">
       Carrito
     </h5>
     <button
@@ -16,24 +16,24 @@
       aria-label="Close"
     ></button>
   </div>
-  <div *ngIf="carrito" class="offcanvas-body">
+  <div *ngIf="carrito" class="modo offcanvas-body">
     <!-- <app-carrito-offcanvas-item *ngIf="carrito" [carrito] = "carrito"></app-carrito-offcanvas-item> -->
     <div
       *ngFor="let item of carrito.items"
-      class="card mb-2"
+      class="modo card mb-2"
       style="max-width: 540px"
     >
-      <div class="row g-0">
-        <div class="col-md-4 d-flex flex-wrap align-items-center">
+      <div class="modo row g-0">
+        <div class="modo col-md-4 d-flex flex-wrap align-items-center">
           <img
             src="{{fileRoute+item.producto.imagePath}}"
-            class="img-fluid"
+            class="modo img-fluid"
             alt="..."
           />
         </div>
-        <div class="col-md-8" *ngIf="item.producto">
-          <div class="card-body" *ngIf="item.producto.precio && item.cantidad">
-            <h5 class="card-title">
+        <div class="modo col-md-8" *ngIf="item.producto">
+          <div class="modo card-body" *ngIf="item.producto.precio && item.cantidad">
+            <h5 class="modo card-title">
               {{ item.producto.nombre }} x {{ item.cantidad }}
             </h5>
             <p>
@@ -49,17 +49,17 @@
               <button
                 (click)="cambiarCantidad(item._id, 'menos')"
                 type="button"
-                class="btn btn-outline-primary"
+                class="btn btn-primary"
               >
                 <i class="bi bi-dash-lg"></i>
               </button>
-              <button type="button" class="btn btn-outline-primary disabled">
+              <button type="button" class="btn btn-primary">
                 {{ item.cantidad }}
               </button>
               <button
                 (click)="cambiarCantidad(item._id, 'mas')"
                 type="button"
-                class="btn btn-outline-primary"
+                class="btn btn-primary"
               >
                 <i class="bi bi-plus-lg"></i>
               </button>
@@ -67,7 +67,7 @@
             <button
               (click)="cambiarCantidad(item._id, 'eliminar')"
               type="button"
-              class="btn btn-outline-danger ms-2"
+              class="btn btn-danger ms-2"
             >
               <i class="bi bi-trash"></i>
             </button>
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div class="d-grid gap-2 col-6 mx-auto">
+    <div class="modo d-grid gap-2 col-6 mx-auto">
       <a href="/home"
         ><button class="btn btn-success text-nowrap" type="button">
           Agregar más productos
@@ -84,12 +84,12 @@
       >
     </div>
   </div>
-  <div class="container p-4 mb-4">
-    <div class="row align-items-end">
-      <div class="col fw-bold">SubTotal</div>
-      <div class="col text-end fw-bold">${{ subtotal }}</div>
+  <div class="modo container p-4 mb-4">
+    <div class="modo row align-items-end">
+      <div class="modo col fw-bold">SubTotal</div>
+      <div class="modo col text-end fw-bold">${{ subtotal }}</div>
     </div>
-    <div class="d-grid m-2 col-12 mx-auto">
+    <div class="modo d-grid m-2 col-12 mx-auto">
       <a
         href="http://localhost:4200/checkout"
         class="btn btn-primary text-nowrap"
