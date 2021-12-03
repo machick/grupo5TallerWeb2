@@ -30,7 +30,7 @@
         <a class="modo link-primary text-decoration-none mx-auto" href="/">Editar</a> -->
       </div>
       <div class="modo list-group">
-        <a href="/pedidos" class="modo list-group-item list-group-item-action"
+        <a *ngIf="userRol !== 'admin'" href="/pedidos" class="modo list-group-item list-group-item-action"
           >Mis pedidos</a
         >
         <a

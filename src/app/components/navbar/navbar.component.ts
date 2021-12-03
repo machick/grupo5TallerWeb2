@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 import { ThemeService } from 'src/app/theme.service';
 
 @Component({
@@ -8,12 +9,19 @@ import { ThemeService } from 'src/app/theme.service';
 })
 export class NavbarComponent implements OnInit {
   public modoSelecccionado:any;
-  constructor(private themeService: ThemeService) {
+  public admin= false;
+  constructor(
+    private themeService: ThemeService,
+    private loginService: LoginService
+    ) {
     this.modoSelecccionado = (this.themeService.getTheme() ==='default' )? false: true;
     this.changeTheme(this.themeService.getTheme());
   }
 
   ngOnInit(): void {
+    (this.loginService.decodeMyToken().userRol === 'admin')? this.admin = true : this.admin = false;
+    console.log(this.admin);
+    console.log(this.loginService.decodeMyToken());
   }
 
   changeTheme(name: string): void {

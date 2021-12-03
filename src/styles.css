@@ -12,3 +12,9 @@ body {
     background-color: var(--primaryColor);
     /* color: var(--textColor); */
 }
+.label{
+    color: var(--textColor);
+}
+.form-floating>.form-control:-webkit-autofill~label {
+    color: black;
+}
