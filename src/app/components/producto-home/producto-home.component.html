@@ -55,6 +55,7 @@
           >
             <!-- <button class="btn btn-success rounded-start">Ver detalles</button> -->
             <button
+            *ngIf="!admin"
               class="btn btn-primary rounded-end"
               (click)="agregarACarrito(product._id)"
             >
