@@ -1,12 +1,12 @@
 <div
-  class="offcanvas offcanvas-end"
+  class="modo offcanvas offcanvas-end"
   data-bs-scroll="true"
   tabindex="-1"
   id="offcanvasWithBothOptions-3"
   aria-labelledby="offcanvasWithBothOptionsLabel"
 >
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+  <div class="modo offcanvas-header">
+    <h5 class="modo offcanvas-title" id="offcanvasWithBothOptionsLabel">
       Agregar producto
     </h5>
     <button
@@ -16,8 +16,8 @@
       aria-label="Close"
     ></button>
   </div>
-  <div class="offcanvas-body">
-    <form  class="" action="">
+  <div class="modo offcanvas-body">
+    <form  class="modo " action="">
       <label for="exampleFormControlInput1" class="form-label">Nombre</label>
       <input
         class="form-control"
@@ -50,8 +50,8 @@
         <option value="destilados">Destilados</option>
         <option value="snacks">Snacks</option>
       </select>
-      <div class="input-group mt-2">
-        <span class="input-group-text">$</span>
+      <div class="modo input-group mt-2">
+        <span class="modo input-group-text">$</span>
         <input
           type="text"
           class="form-control"
@@ -59,23 +59,23 @@
           [(ngModel)]="newPrecio"
           name="precio"
         />
-        <span class="input-group-text">.00</span>
+        <span class="modo input-group-text">.00</span>
       </div>
       <input class="form-control" type="file" id="input-asset" (change)="onUploadImage($event)" value=" ">
-      <div class="container-image-uploaded" *ngIf="producto">
-        <img class="img-fluid" target="_blank" src="{{fileRoute+imageFile.path}}">
+      <div class="modo container-image-uploaded" *ngIf="producto">
+        <img class="modo img-fluid" target="_blank" src="{{fileRoute+imageFile.path}}">
       </div>
-      <div class="d-grid m-2 col-12 mx-auto">
+      <div class="modo d-grid m-2 col-12 mx-auto">
         <button class="btn btn-primary text-nowrap" (click)="agregarProducto()">
           Confirmar
         </button>
       </div>
     </form>
   </div>
-  <div class="d-grid p-2 m-2">
+  <div class="modo d-grid p-2 m-2">
     <button
       type="button"
-      class="btn btn-outline-warning"
+      class="btn btn-warning"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasWithBothOptions-3"
       aria-controls="offcanvasWithBothOptions"

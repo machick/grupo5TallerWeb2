@@ -53,7 +53,8 @@ export class LoginService {
 
   }
   public logout():void {
-    localStorage.clear();
+    //localStorage.clear();
+    localStorage.removeItem('token');
   }
 
   public reenviarCodigo(emailResend: string): Promise<any> {

@@ -4,6 +4,7 @@ import { ProductoserviceService } from 'src/app/services/productoservice.service
 import { Producto } from 'src/app/models/producto/producto';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { environment } from 'src/environments/environment';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -15,9 +16,10 @@ export class ProductoHomeComponent implements OnInit {
   public productos: Array<Producto> | undefined;
   public fileRoute = environment.API_URL_IMAGE;
   public nombre = '';
-
+  public admin:any;
   constructor(private productoservice: ProductoserviceService,
     private carritoService: CarritoService,
+    private loginService: LoginService,
     private router: Router)
     { }
 
@@ -26,6 +28,8 @@ export class ProductoHomeComponent implements OnInit {
   para despues agregarlo en el metodo de abajo, y ahi llamar al servicio para pasarlo
   a la vista del componente*/
   ngOnInit(): void {
+    console.log(this.loginService.decodeMyToken());
+    (this.loginService.decodeMyToken().userRol ==='admin')  ? this.admin = true : this.admin = false;
     this.obtenerProductos();
   }
 

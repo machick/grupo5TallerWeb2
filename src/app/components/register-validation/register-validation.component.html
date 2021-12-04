@@ -1,5 +1,5 @@
-<form class="row g-3">
-  <div class="col-md-4">
+<form class="modo row g-3">
+  <div class="modo col-md-4">
     <label for="validationServer01" class="form-label">Nombre</label>
     <input
       type="text"
@@ -9,9 +9,9 @@
       name="name"
       [(ngModel)]="name"
     />
-    <div class="invalid-feedback">{{nameError}}</div>
+    <div class="modo invalid-feedback">{{nameError}}</div>
   </div>
-  <div class="col-md-4">
+  <div class="modo col-md-4">
     <label for="validationServer02" class="form-label">Apellido</label>
     <input
       type="text"
@@ -21,13 +21,13 @@
       name = "lastName"
       [(ngModel)]="lastName"
     />
-    <div class="invalid-feedback">{{lastNameError}}</div>
+    <div class="modo invalid-feedback">{{lastNameError}}</div>
   </div>
-  <div class="col-md-4">
+  <div class="modo col-md-4">
     <label for="validationServerCorreoElectronico" class="form-label"
       >Correo electrónico</label
     >
-    <div class="input-group has-validation">
+    <div class="modo input-group has-validation">
       <input
         type="text"
         class="form-control {{emailClass}}"
@@ -39,13 +39,13 @@
       />
       <div
         id="validationServerCorreoElectronicoFeedback"
-        class="invalid-feedback"
+        class="modo invalid-feedback"
       >
         {{emailError}}
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="modo col-md-4">
     <label for="validationServer01" class="form-label">Contraseña</label>
     <input
       type="password"
@@ -56,9 +56,9 @@
       name="password1"
       [(ngModel)]="password1"
     />
-    <div class="invalid-feedback">{{password1Error}}</div>
+    <div class="modo invalid-feedback">{{password1Error}}</div>
   </div>
-  <div class="col-md-4">
+  <div class="modo col-md-4">
     <label for="validationServer02" class="form-label">Repita Contraseña</label>
     <input
       type="password"
@@ -69,11 +69,11 @@
       name = "password2"
       [(ngModel)]="password2"
     />
-    <div class="invalid-feedback">{{password2Error}}</div>
+    <div class="modo invalid-feedback">{{password2Error}}</div>
   </div>
 
 
-  <!-- <div class="col-md-6">
+  <!-- <div class="modo col-md-6">
     <label for="validationServer03" class="form-label">City</label>
     <input
       type="text"
@@ -82,11 +82,11 @@
       aria-describedby="validationServer03Feedback"
       required
     />
-    <div id="validationServer03Feedback" class="invalid-feedback">
+    <div id="validationServer03Feedback" class="modo invalid-feedback">
       Por favor ingresa una ciudad válida.
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="modo col-md-3">
     <label for="validationServer04" class="form-label">Ciudad</label>
     <select
       class="form-select is-invalid"
@@ -98,11 +98,11 @@
       <option>Buenos Aires</option>
       <option>Rosario</option>
     </select>
-    <div id="validationServer04Feedback" class="invalid-feedback">
+    <div id="validationServer04Feedback" class="modo invalid-feedback">
       Por favor ingresa una provincia válida.
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="modo col-md-3">
     <label for="validationServer05" class="form-label">Zip</label>
     <input
       type="text"
@@ -111,11 +111,11 @@
       aria-describedby="validationServer05Feedback"
       required
     />
-    <div id="validationServer05Feedback" class="invalid-feedback">
+    <div id="validationServer05Feedback" class="modo invalid-feedback">
       Por favor ingresa un código postal válido.
     </div>
   </div> -->
- <!--  <div class="col-12">
+ <!--  <div class="modo col-12">
     <div class="form-check">
       <input
         class="form-check-input is-invalid"
@@ -128,32 +128,32 @@
       <label class="form-check-label" for="invalidCheck3">
         Acepto términos y condiciones
       </label>
-      <div id="invalidCheck3Feedback" class="invalid-feedback">
+      <div id="invalidCheck3Feedback" class="modo invalid-feedback">
         Debés aceptar antes de continuar.
       </div>
     </div>
   </div> -->
-  <div class="col-12">
-  <div *ngIf="verificarEmail" class="position-relative p-3 m-2" >
-    <p class="text-success">Registro completo le mandamos un mail con el codigo para verificar la cuenta por favor ingrese el codigo de verificacion</p>
+  <div class="modo col-12">
+  <div *ngIf="verificarEmail" class="modo position-relative p-3 m-2" >
+    <p class="modo text-success">Registro completo le mandamos un mail con el codigo para verificar la cuenta por favor ingrese el codigo de verificacion</p>
     <span>Ingrese codigo: </span> <br>
     <input   class="form-control"type="text" name="code"
       [(ngModel)]="code"
     >
-    <label *ngIf="verificarEmailError" class="text-danger">Error verificar codigo</label> <br>
-    <button type="button" class="btn btn-outline-success mt-2" (click) = "verificar()">
+    <label *ngIf="verificarEmailError" class="modo text-danger">Error verificar codigo</label> <br>
+    <button type="button" class="btn btn-success mt-2" (click) = "verificar()">
       Verificar
     </button>
-    <button type="button" class="btn btn-outline-success mt-2 mx-2" (click) = "reenviarCodigo()">
+    <button type="button" class="btn btn-success mt-2 mx-2" (click) = "reenviarCodigo()">
       Reenviar codigo
     </button> <br>
   </div>
-  <div *ngIf="verificado" class="position-relative p-3 m-2" >
-    <p class="text-success">Correo verificado ya puede ingresar con su correo y contraseña !</p>
+  <div *ngIf="verificado" class="modo position-relative p-3 m-2" >
+    <p class="modo text-success">Correo verificado ya puede ingresar con su correo y contraseña !</p>
   </div>
 </div>
-  <div class="col-12" *ngIf="!verificado">
+  <div class="modo col-12" *ngIf="!verificado">
     <button class="btn btn-success" type="submit" (click) = "register()">Continuar</button>
   </div>
-  <label *ngIf="errorRegistro" class="text-danger">{{errorRegistro}}</label> <br>
+  <label *ngIf="errorRegistro" class="modo text-danger">{{errorRegistro}}</label> <br>
 </form>

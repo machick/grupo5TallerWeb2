@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --primaryColor: #ffffff;
+    --textColor: #461c6d;
+    
+}
+.modo {
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    }
+body {
+    background-color: var(--primaryColor);
+    /* color: var(--textColor); */
+}
+.label{
+    color: var(--textColor);
+}
+.form-floating>.form-control:-webkit-autofill~label {
+    color: black;
+}

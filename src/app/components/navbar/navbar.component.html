@@ -1,15 +1,16 @@
-<nav class="navbar navbar-light bg-light p-0 shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="/">
+<nav class="modo navbar navbar-light  p-0 shadow-sm">
+  <div class="modo container modo">
+    <a class="modo navbar-brand" href="/">
       <img
-        class="float-start"
+        class="modo float-start"
         id="isotipo"
         src="../assets/img/imagotipo.png"
         alt="BirrApp Isotipo"
       />
     </a>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <div class="modo d-grid gap-2 d-md-flex justify-content-md-end">
       <button
+        *ngIf="!admin"
         class="btn btn-primary"
         type="button"
         data-bs-toggle="offcanvas"
@@ -29,6 +30,19 @@
         <i class="bi bi-person-circle"></i>
         Perfil
       </button>
+      <div >
+        <div class="d-flex justify-content-between">
+          <i class="bi bi-sun-fill"></i>
+          <i class="bi bi-moon-fill"></i>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input "
+          style="width: 50px;"
+          type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="modoSelecccionado" (click)="changeThemeButton()" >
+        </div>
+      </div>
+      <!--   <button (click)="changeTheme('default')">Default</button>&nbsp;&nbsp;
+      <button (click)="changeTheme('dark')">Dark</button> -->
     </div>
   </div>
 </nav>
