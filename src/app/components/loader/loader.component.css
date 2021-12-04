@@ -1,0 +1,40 @@
+.box-loader-outer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2000;
+  background-color: #00000069;
+}
+.box-loader-inner {
+  position: absolute;
+  left: 50%;
+  width: 35%;
+  top: 50%;
+  background-color: white;
+  padding: 30px;
+  transform: translate(-50%,-50%);
+}
+.icon-loading {
+  width: 60px;
+  height: 60px;
+  border: 10px solid #d3d3d3;
+  border-top: 10px solid #3400c3;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
