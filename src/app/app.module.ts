@@ -23,6 +23,7 @@ import { environment } from 'src/environments/environment';
 import { LoginService } from './services/login.service';
 import { AdminOffcanvasComponent } from './components/admin-offcanvas/admin-offcanvas.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
+import { LoaderComponent } from './components/loader/loader.component';
 //import { environment } from 'src/environments/environment';
 
 export function tokenGetter(): string  | null{
@@ -46,14 +47,15 @@ export function tokenGetter(): string  | null{
     ProductoHomeComponent,
     AdminOffcanvasComponent,
     PedidosComponent,
+    LoaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
     JwtModule.forRoot({
     config: {
       // para jugar con los tokens aunque hay cosas q no tengo claras
       //allowedDomains: environment.API,
-      //update: esto es importante ...al parecer es el q le da el permiso para mandar el token a distintas url en 
-      allowedDomains: environment.API_WHITELIST, //este caso nuestra api si le puede mandar el token 
+      //update: esto es importante ...al parecer es el q le da el permiso para mandar el token a distintas url en
+      allowedDomains: environment.API_WHITELIST, //este caso nuestra api si le puede mandar el token
       tokenGetter,
     },
   }),

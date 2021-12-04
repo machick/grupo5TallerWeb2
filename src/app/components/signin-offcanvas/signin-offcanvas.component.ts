@@ -11,6 +11,8 @@ export class SigninOffcanvasComponent implements OnInit {
   public email:any;
   public password:any;
   public isValid = true;
+  public loadingShow = false;
+  public loadingTitle = '';
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -20,9 +22,13 @@ export class SigninOffcanvasComponent implements OnInit {
   }
 
    public login() {
+     this.loadingShow = true;
+     this.loadingTitle = 'Cargando ...'
     return this.loginService.login(this.email, this.password)
     .then((res) => {
-        return this.router.navigate(['/home']);
+      this.loadingShow = false;
+      this.loadingTitle = ''
+      return this.router.navigate(['/home']);
     })
     .catch((err) => {
         this.isValid = false;
